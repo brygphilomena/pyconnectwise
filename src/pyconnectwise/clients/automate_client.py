@@ -29,6 +29,7 @@ if typing.TYPE_CHECKING:
     from pyconnectwise.endpoints.automate.ProbeconfigurationEndpoint import (
         ProbeconfigurationEndpoint,
     )
+    from pyconnectwise.endpoints.automate.RetiredassetsEndpoint import RetiredassetsEndpoint
     from pyconnectwise.endpoints.automate.ScriptfoldersEndpoint import ScriptfoldersEndpoint
     from pyconnectwise.endpoints.automate.ScriptingEndpoint import ScriptingEndpoint
     from pyconnectwise.endpoints.automate.ScriptsEndpoint import ScriptsEndpoint
@@ -142,6 +143,12 @@ class ConnectWiseAutomateAPIClient(ConnectWiseClient):
         from pyconnectwise.endpoints.automate.PatchactionsEndpoint import PatchactionsEndpoint
 
         return PatchactionsEndpoint(self)
+
+    @property
+    def retiredassets(self) -> "RetiredassetsEndpoint":
+        from pyconnectwise.endpoints.automate.RetiredassetsEndpoint import RetiredassetsEndpoint
+
+        return RetiredassetsEndpoint(self)
 
     @property
     def locations(self) -> "LocationsEndpoint":
