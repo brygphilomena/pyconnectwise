@@ -3682,6 +3682,41 @@ class AutomatePatchingPolicyScriptOptions(ConnectWiseModel):
     after_script_options: AutomatePatchingPolicyScript | None = Field(default=None, alias="AfterScriptOptions")
 
 
+class AutomatePatchingPatchHistory(ConnectWiseModel):
+    action_date: datetime | None = Field(default=None, alias="ActionDate")
+    computer_id: int | None = Field(default=None, alias="ComputerId")
+    operation_code: AutomatePatchingPatchHistoryOperationCode | None = Field(default=None, alias="OperationCode")
+    patch_history_client: AutomatePatchingPatchHistoryPatchHistoryClient | None = Field(
+        default=None, alias="PatchHistoryClient"
+    )
+    patch_history_title: AutomatePatchingPatchHistoryPatchHistoryTitle | None = Field(
+        default=None, alias="PatchHistoryTitle"
+    )
+    result_code: AutomatePatchingPatchHistoryResultCode | None = Field(default=None, alias="ResultCode")
+    UpdateId: str | None = Field(default=None, alias="UpdateId")
+
+
+class AutomatePatchingPatchHistoryOperationCode(ConnectWiseModel):
+    id: int | None = Field(default=None, alias="Id")
+    name: str | None = Field(default=None, alias="Name")
+
+
+class AutomatePatchingPatchHistoryPatchHistoryClient(ConnectWiseModel):
+    id: int | None = Field(default=None, alias="Id")
+    name: str | None = Field(default=None, alias="Name")
+
+
+class AutomatePatchingPatchHistoryPatchHistoryTitle(ConnectWiseModel):
+    id: int | None = Field(default=None, alias="Id")
+    title: str | None = Field(default=None, alias="Title")
+    knowledge_base_id: str | None = Field(default=None, alias="KnowledgeBaseId")
+
+
+class AutomatePatchingPatchHistoryResultCode(ConnectWiseModel):
+    id: int | None = Field(default=None, alias="Id")
+    name: str | None = Field(default=None, alias="Name")
+
+
 class AutomateGroupTypeInformation(ConnectWiseModel):
     inherited_group_type_id: int | None = Field(default=None, alias="InheritedGroupTypeId")
     is_modifiable: bool | None = Field(default=None, alias="IsModifiable")

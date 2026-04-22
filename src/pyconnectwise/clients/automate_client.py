@@ -26,6 +26,7 @@ if typing.TYPE_CHECKING:
         NetworkdevicesEndpoint,
     )
     from pyconnectwise.endpoints.automate.PatchactionsEndpoint import PatchactionsEndpoint
+    from pyconnectwise.endpoints.automate.PatchhistoryEndpoint import PatchhistoryEndpoint
     from pyconnectwise.endpoints.automate.PermissionsEndpoint import PermissionsEndpoint
     from pyconnectwise.endpoints.automate.ProbeconfigurationEndpoint import (
         ProbeconfigurationEndpoint,
@@ -150,6 +151,12 @@ class ConnectWiseAutomateAPIClient(ConnectWiseClient):
         from pyconnectwise.endpoints.automate.PatchactionsEndpoint import PatchactionsEndpoint
 
         return PatchactionsEndpoint(self)
+
+    @property
+    def patchhistory(self) -> "PatchhistoryEndpoint":
+        from pyconnectwise.endpoints.automate.PatchhistoryEndpoint import PatchhistoryEndpoint
+
+        return PatchhistoryEndpoint(self)
 
     @property
     def retiredassets(self) -> "RetiredassetsEndpoint":
