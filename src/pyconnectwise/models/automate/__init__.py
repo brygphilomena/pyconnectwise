@@ -3709,7 +3709,7 @@ class AutomatePatchingPatchHistoryPatchHistoryClient(ConnectWiseModel):
 class AutomatePatchingPatchHistoryPatchHistoryTitle(ConnectWiseModel):
     id: int | None = Field(default=None, alias="Id")
     title: str | None = Field(default=None, alias="Title")
-    knowledge_base_id: str | None = Field(default=None, alias="KnowledgeBaseId")
+    knowledge_base_id: str | int | None = Field(default=None, alias="KnowledgeBaseId")
 
 
 class AutomatePatchingPatchHistoryResultCode(ConnectWiseModel):
