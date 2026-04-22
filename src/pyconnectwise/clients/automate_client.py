@@ -5,6 +5,7 @@ from pyconnectwise.clients.connectwise_client import ConnectWiseClient
 from pyconnectwise.config import Config
 
 if typing.TYPE_CHECKING:
+    from pyconnectwise.endpoints.automate.AlertsEndpoint import AlertsEndpoint
     from pyconnectwise.endpoints.automate.ClientsEndpoint import ClientsEndpoint
     from pyconnectwise.endpoints.automate.CommandsEndpoint import CommandsEndpoint
     from pyconnectwise.endpoints.automate.ComputersEndpoint import ComputersEndpoint
@@ -78,6 +79,12 @@ class ConnectWiseAutomateAPIClient(ConnectWiseClient):
         self.access_token: str = self._get_access_token()
 
     # Initializing endpoints
+    @property
+    def alerts(self) -> "AlertsEndpoint":
+        from pyconnectwise.endpoints.automate.AlertsEndpoint import AlertsEndpoint
+
+        return AlertsEndpoint(self)
+
     @property
     def commands(self) -> "CommandsEndpoint":
         from pyconnectwise.endpoints.automate.CommandsEndpoint import CommandsEndpoint

@@ -9942,7 +9942,7 @@ class Member(ConnectWiseModel):
     ConditionallyRequired. API Member will get random password generated Max length: 60;
     """
     phone_integration_type: Annotated[
-        Literal["TAPI", "SKYPE", "NONE"] | None, Field(alias="phoneIntegrationType")
+        Literal["TAPI", "SKYPE", "NONE", "CALLTO"] | None, Field(alias="phoneIntegrationType")
     ] = None
     phone_source: Annotated[str | None, Field(alias="phoneSource")] = None
     photo: DocumentReference | None = None
@@ -10345,7 +10345,7 @@ class MyAccount(ConnectWiseModel):
     ConditionallyRequired. API Member will get random password generated Max length: 60;
     """
     phone_integration_type: Annotated[
-        Literal["TAPI", "SKYPE", "NONE"] | None, Field(alias="phoneIntegrationType")
+        Literal["TAPI", "SKYPE", "NONE", "CALLTO"] | None, Field(alias="phoneIntegrationType")
     ] = None
     phone_source: Annotated[str | None, Field(alias="phoneSource")] = None
     photo: DocumentReference | None = None
