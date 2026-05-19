@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING
 
 from pyconnectwise.endpoints.base.connectwise_endpoint import ConnectWiseEndpoint
+from pyconnectwise.endpoints.manage.SalesOpportunitiesConversionsEndpoint import SalesOpportunitiesConversionsEndpoint
 from pyconnectwise.endpoints.manage.SalesOpportunitiesCountEndpoint import SalesOpportunitiesCountEndpoint
 from pyconnectwise.endpoints.manage.SalesOpportunitiesDefaultEndpoint import SalesOpportunitiesDefaultEndpoint
 from pyconnectwise.endpoints.manage.SalesOpportunitiesIdEndpoint import SalesOpportunitiesIdEndpoint
@@ -33,6 +34,9 @@ class SalesOpportunitiesEndpoint(
         self.ratings = self._register_child_endpoint(SalesOpportunitiesRatingsEndpoint(client, parent_endpoint=self))
         self.statuses = self._register_child_endpoint(SalesOpportunitiesStatusesEndpoint(client, parent_endpoint=self))
         self.types = self._register_child_endpoint(SalesOpportunitiesTypesEndpoint(client, parent_endpoint=self))
+        self.conversions = self._register_child_endpoint(
+            SalesOpportunitiesConversionsEndpoint(client, parent_endpoint=self)
+        )
 
     def id(self, _id: int) -> SalesOpportunitiesIdEndpoint:
         """
