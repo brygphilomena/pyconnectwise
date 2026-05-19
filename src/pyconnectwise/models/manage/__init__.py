@@ -3251,6 +3251,12 @@ class OpportunityType(ConnectWiseModel):
     inactive_flag: Annotated[bool | None, Field(alias="inactiveFlag")] = None
 
 
+class OpportunityConversion(ConnectWiseModel):
+    info: Annotated[dict[str, str] | None, Field(alias="_info")] = None
+    parent_type: Annotated[str | None, Field(alias="parentType")] = None
+    converted_to: Annotated[dict[str, int | str | dict[str, str]] | None, Field(alias="convertedTo")] = None
+
+
 class OpportunityTypeInfo(ConnectWiseModel):
     info: Annotated[dict[str, str] | None, Field(alias="_info")] = None
     description: str | None = None
